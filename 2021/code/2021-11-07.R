@@ -10,9 +10,10 @@
 # ------------------------------------------------------------------------------
 
 # Environment and place
-renv::activate()
-fname = here::here(format(Sys.time(), "%Y"), "img", "2021-11-07.png")
+# format(Sys.time(), "%Y")
+renv::activate(here::here("2021"))
+fname = here::here("2021", "img", "2021-11-07.png")
 
 
 
-ggplot2::ggsave(fname, fname, height = 12, width = 12)
+ggplot2::ggsave(fname, height = 12, width = 12)
