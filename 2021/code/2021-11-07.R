@@ -3,6 +3,9 @@
 # ------------------------------------------------------------------------------
 # title: 7th.
 # purpose: This script generates maps for the 07 day of the challange.
+#   Three maps show the cities I have lived in: Mexico (Las Vigas, Chilpancingo,
+#   Cuernavaca), the US (San Diego), and the UK (Bath, Kingsbridge, Thurlestone,
+#   Wembury). Data were taken from OSM using the osmdata R package.
 # author:
 #   - name: Ciro Ramírez-Suástegui
 #     email: ksuastegui@gmail.com
@@ -41,8 +44,8 @@ places_list <- list(
   ),
   list(
     title = "United Kingdom", country = "GB",
-    states = list(bbox = "Devon, United Kingdom", alevel = "6", states = c("Devon")),
-    cities = c("Kingsbridge", "Thurlestone", "Wembury")
+    states = list(bbox = "Devon, United Kingdom", alevel = "6", states = c("Devon", "Somerset")),
+    cities = c("Bath", "Kingsbridge", "Thurlestone", "Wembury")
   ),
   list(
     title = "United States", country = "US",
