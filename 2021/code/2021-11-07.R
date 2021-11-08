@@ -17,7 +17,6 @@
 
 # format(Sys.time(), "%Y")
 source(here::here("2021", "code", "installations.R"))
-fname = here::here("2021", "img", "2021-11-07")
 
 ## Functions ## ----------------------------------------------------------------
 get_places <- function(bounds, values_h = NULL){
@@ -60,12 +59,12 @@ pp <- list()
 pp[["text"]] <-
   cowplot::ggdraw() +
   cowplot::draw_label(label = "Places I call(ed) home", size = 25, vjust = -2,
-                      fontfamily = "Zapfino", fontface = "bold") +
-  cowplot::draw_label(label = paste0("Circa 2011, when I was 15, I left my grandma's home.\n",
+                      fontfamily = "Zapfino", fontface = "bold", color = "gray99") +
+  cowplot::draw_label(label = paste0("Circa 2011, when I was 15, I left my grandma's house.\n",
                                      "It has been a wild adventure!"), size = 15,
                       fontfamily = "Papyrus", color = "darkgoldenrod3") +
   cowplot::draw_label(label = paste0("#30DayMapChallenge | Day 7, Green | ",
-                                     "Ciro Ramírez-Suástegui | Data: OSM"), size = 10,
+                                     "@cramsuig | Data: OSM"), size = 10,
                       hjust = 0.5, vjust = 10, color = "gray75")
 
 for (places in places_list) {
@@ -77,7 +76,7 @@ for (places in places_list) {
   country <- tmap::tm_shape(country_sf) + tmap::tm_polygons()
   
   cat(crayon::green("States/counties:"), "\n"); str(places$states)
-  states <- opq(bbox = places$states$bbox) %>%
+  states <- opq(bbox = places$states$bbox, timeout = 60) %>%
     add_osm_feature(key = "admin_level", value = places$states$alevel) %>%
     osmdata_sf() %>%
     .$osm_multipolygons %>%
@@ -104,20 +103,20 @@ for (places in places_list) {
          subtitle = paste(gsub(", Mexico|, Guerrero|, Morelos", "", places$cities), collapse = ", ")) +
     theme(
       plot.title = element_text(family = "Apple Chancery", face = "bold",
-                                color = "goldenrod4", size = 20, hjust = 0.5),
-      plot.subtitle = element_text(hjust = 0.5),
+                                color = "darkgoldenrod1", size = 23, hjust = 0.5),
+      plot.subtitle = element_text(hjust = 0.5, size = 15, color = "goldenrod4"),
       plot.caption = element_blank()
     )
 }
 
-ppg <- cowplot::plot_grid(plotlist = pp[c("text", sapply(places_list, "[[", 2))]) +
+ppg <- cowplot::plot_grid(plotlist = pp) +
   theme(
     plot.background = element_rect(fill = "#0c3018", colour = NA),
     panel.background = element_rect(fill = "#0c3018", colour = NA)
   )
  
 ggplot2::ggsave(
-  filename = paste0(fname, ".png"),
+  filename = here::here("2021", "img", "2021-11-07.png"),
   plot = ppg,
   width = 10, height = 10
 )
