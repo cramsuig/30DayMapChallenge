@@ -2,7 +2,7 @@
 
 # ------------------------------------------------------------------------------
 # title: 7th.
-# purpose: This script generates maps for the 07 day of the challange.
+# purpose: This script generates maps for the 07 day of the challenge.
 #   Three maps show the cities I have lived in: Mexico (Las Vigas, Chilpancingo,
 #   Cuernavaca), the US (San Diego), and the UK (Bath, Kingsbridge, Thurlestone,
 #   Wembury). Data were taken from OSM using the osmdata R package.
