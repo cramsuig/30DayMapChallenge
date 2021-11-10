@@ -79,7 +79,7 @@ gganimate::anim_save(
 rtweet::post_tweet(
   status = paste0(
     "#30DayMapChallenge monochrome\n\n",
-    "code: ", gsub("\\.git", "/", usethis::git_remotes()), "2021/code/", day, ".R",
+    "code: ", gsub("\\.git", "/", usethis::git_remotes()), "blob/main/2021/code/", day, ".R",
     "\n\nI can finally sleep..."
   ),
   media = fname,
