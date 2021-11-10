@@ -24,7 +24,11 @@ packages_funcs = c(
   "devtools", # 2021-11-08
   "thomasp85/ambient@v1.0.0",
   "gridGraphics",
-  "ggpubr", "magick", "rnaturalearth", "rgdal"
+  "ggpubr", "magick", "rnaturalearth", "rgdal",
+  "afrimapr/afrilearndata", # 2021-11-09
+  "afrimapr/afrihealthsites", # updated glue and tibble, not compiled systemfonts
+  "ropensci/rtweet", # somehow I had to do it manually again :(
+  "gganimate", "transformr"
 )
 i <- !gsub(".*\\/|@.*", "", packages_funcs) %in% installed.packages()[, "Package"]
 if(any(i)) cat(crayon::red("Not installed:"), packages_funcs[i], sep = "\n ")
@@ -44,3 +48,4 @@ for (i in packages_funcs){
     suppressMessages(require(package = i_name, quietly = TRUE, character.only = TRUE))
   }else{ source(i) }
 }
+rm(i, i_name, packages_funcs)
