@@ -1,8 +1,8 @@
 #!/usr/bin/R
 
 # ------------------------------------------------------------------------------
-# title: 3D.
-# purpose: This script is a template of best practices for an R script.
+# title: raster and 3D.
+# purpose: 3D surface elevation of the state of Guerrero, México.
 # author:
 #   - name: Ciro Ramírez-Suástegui
 #     affiliation: La Jolla Institute for Immunology
@@ -11,6 +11,7 @@
 # ------------------------------------------------------------------------------
 # Thanks to:
 # https://rspatialdata.github.io/elevation.html
+# https://github.com/ivabrunec/30daymapchallenge/blob/main/scripts/day11_3D.R
 # Might wanna look at:
 # https://rpubs.com/ials2un/elevationfromR
 
