@@ -1,8 +1,9 @@
 #!/usr/bin/R
 
 # ------------------------------------------------------------------------------
-# title: R Script Template.
-# purpose: This script is a template of best practices for an R script.
+# title: Data challenge 2: Natural Earth.
+# purpose: Map of the Mexico state, Mexico city, and Morelos with elevation
+#   as colour. Lake Texcoco and rivers around are drawn too.
 # author:
 #   - name: Ciro Ramírez-Suástegui
 #     affiliation: La Jolla Institute for Immunology
