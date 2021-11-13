@@ -32,11 +32,6 @@ states <- opq(bbox = "Mexico", timeout = 60) %>%
   filter(name %in% places$states$states) %>% 
   cbind(., st_coordinates(st_centroid(.$geometry)))
 
-map_url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places.geojson"
-map_pop <- sf::st_read(map_url) %>%
-  dplyr::filter(NAME == "Mexico City") %>%
-  dplyr::select(NAME, POP_MAX, POP_MIN, geometry)
-
 map_url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_lakes_historic.geojson"
 map_lake <- sf::st_read(map_url) %>%
   dplyr::filter(name == "Lake Texcoco") %>%
